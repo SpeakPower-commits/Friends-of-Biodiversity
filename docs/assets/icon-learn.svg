@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Learn">
+  <style>
+    .pg{transform-origin:32px 32px;animation:turn 3.6s ease-in-out infinite}
+    @keyframes turn{0%,70%,100%{transform:scaleX(1)}35%{transform:scaleX(-1)}}
+  </style>
+  <circle cx="32" cy="32" r="31" fill="#2E4A34"/>
+  <path d="M32 20c-5-3-11-3-16-2v24c5-1 11-1 16 2Z" fill="#EFCF9E" opacity=".55"/>
+  <path d="M32 20c5-3 11-3 16-2v24c-5-1-11-1-16 2Z" fill="#EFCF9E"/>
+  <path d="M32 20c4-2 8-2.6 12-2.4v22c-4-.2-8 .4-12 2.4Z" fill="#97BC62" class="pg" opacity=".85"/>
+  <rect x="31" y="19" width="2" height="25" fill="#2E4A34"/>
+</svg>

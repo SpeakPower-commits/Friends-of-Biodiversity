@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Join">
+  <style>
+    .slide{animation:slide 3.2s ease-in-out infinite}
+    @keyframes slide{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+    .shine{animation:shine 3.2s ease-in-out infinite}
+    @keyframes shine{0%,60%,100%{opacity:0}75%{opacity:.75}}
+  </style>
+  <circle cx="32" cy="32" r="31" fill="#2E4A34"/>
+  <g class="slide">
+    <rect x="14" y="21" width="36" height="24" rx="4" fill="#EFCF9E"/>
+    <rect x="14" y="27" width="36" height="4" fill="#2E4A34" opacity=".55"/>
+    <rect x="19" y="36" width="14" height="3" rx="1.5" fill="#2E4A34" opacity=".55"/>
+    <rect x="37" y="35" width="8" height="5" rx="2" fill="#97BC62"/>
+    <rect x="14" y="21" width="12" height="24" fill="#fff" class="shine" opacity="0"/>
+  </g>
+</svg>
