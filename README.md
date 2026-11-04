@@ -161,7 +161,7 @@ Benefits per tier live in `PERKS_MAP` in [`app.js`](app.js).
 
 - Overview KPIs and revenue by tier
 - Member approval, verification and renewals
-- Content library, Wall of Fame, announcements, financial reports
+- Content library, Hall of Fame, announcements, financial reports
 - Payment details, conservation gallery, ad campaigns, events, fundraisers
 - Audit log and the growth/intelligence cockpit
 

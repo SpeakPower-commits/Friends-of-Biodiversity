@@ -38,8 +38,8 @@ const TIER_RANGES={
   diamond:{individual:'5M+ UGX',institution:'50M+ UGX'},
 };
 const PERKS_MAP={
-  student:['🎓 Youth project & volunteer work registration','🤝 In-kind contributions recognised','📚 Full Learning Exchange access','🏆 Wall of Fame listing','📜 Downloadable digital membership certificate','🧭 Professional mentorship & leadership development package'],
-  silver:['📦 Eco-friendly welcome kit & personalised certificates','📊 Contribution & accountability dashboard','🎓 Learning Exchange content library access','🏆 Wall of Fame listing','📜 Downloadable digital membership certificate'],
+  student:['🎓 Youth project & volunteer work registration','🤝 In-kind contributions recognised','📚 Full Learning Exchange access','🏆 Hall of Fame listing','📜 Downloadable digital membership certificate','🧭 Professional mentorship & leadership development package'],
+  silver:['📦 Eco-friendly welcome kit & personalised certificates','📊 Contribution & accountability dashboard','🎓 Learning Exchange content library access','🏆 Hall of Fame listing','📜 Downloadable digital membership certificate'],
   gold:['All Silver perks','👁 Visibility in UBF conservation projects','🤝 Exclusive networking & partnership events','📬 Priority invitations to UBF events','📋 Quarterly impact report'],
   platinum:['All Gold perks','🎨 Co-branding on project materials & publications','🤝 Strategic partnership access','📰 Named in UBF annual report','💼 Private Executive Director briefing'],
   diamond:['All Platinum perks','🌟 Named conservation project or corridor','🏛 Board-level observer engagement','📈 Bespoke ESG biodiversity reporting package','📡 Media & PR recognition campaign','👑 Annual CEO briefing','🌍 Exposure visits to project sites'],
@@ -208,7 +208,7 @@ async function setArchived(table,id,val){
 /* ═══ BENEFIT-GATING — benefits stay locked until payment is confirmed ═══ */
 function lockedBenefitsHTML(){
   return '<div class="locked-perks">'+
-    ['📊 Accountability dashboard','🎓 Learning Exchange library','🏆 Wall of Fame listing','📜 Digital membership certificate']
+    ['📊 Accountability dashboard','🎓 Learning Exchange library','🏆 Hall of Fame listing','📜 Digital membership certificate']
     .map(p=>'<div class="locked-perk"><span>'+p+'</span><span class="lk">🔒</span></div>').join('')+
   '</div>';
 }
@@ -415,7 +415,7 @@ function openProtect(id){
     '</div>';
   openModal('m-detail');
 }
-/* Clicking a Wall of Fame champion → their member profile, or a champion detail */
+/* Clicking a Hall of Fame champion → their member profile, or a champion detail */
 function openFame(idx){
   const m=FAME[idx];if(!m)return;_buzz&&_buzz();
   // Try to open the real member profile first
@@ -427,7 +427,7 @@ function openFame(idx){
   document.getElementById('detail-body').innerHTML=
     '<div class="dtl-hero">'+(m.photo?'<img src="'+esc(m.photo)+'" alt="" class="dtl-media"/>':'<div class="dtl-media dtl-media-empty">'+initials+'</div>')+
       '<div class="dtl-hero-grad"></div>'+
-      '<div class="dtl-hero-txt"><span class="dtl-kind">🏆 Wall of Fame · '+esc(m.year||'')+'</span><h2>'+esc(m.name||'')+'</h2>'+
+      '<div class="dtl-hero-txt"><span class="dtl-kind">🏆 Hall of Fame · '+esc(m.year||'')+'</span><h2>'+esc(m.name||'')+'</h2>'+
       '<span class="dtl-region">'+(td.emoji||'')+' '+esc(td.label||'')+' champion</span></div></div>'+
     '<div class="dtl-body">'+
       (m.caption?'<p class="dtl-blurb">'+esc(m.caption)+'</p>':'')+
@@ -775,7 +775,7 @@ function adOpen(id){
     // In the public shell, sections live behind panels — open the matching panel
     if(document.body.classList.contains('shell-mode')){
       const target=document.querySelector('#view-main > section.shell-sec[data-panel="'+sec+'"]')||document.getElementById(sec);
-      const panelMap={greencard:['greencard','Green Card'],themes:['programmes','Programmes'],learn:['learning','Learning Exchange'],impact:['footprint','Our Footprint'],wallfame:['wallfame','Wall of Fame']};
+      const panelMap={greencard:['greencard','Green Card'],themes:['programmes','Programmes'],learn:['learning','Learning Exchange'],impact:['footprint','Our Footprint'],wallfame:['wallfame','Hall of Fame']};
       if(panelMap[sec]){openShell(panelMap[sec][0],panelMap[sec][1]);return;}
       const dp=target&&target.getAttribute&&target.getAttribute('data-panel');
       if(dp){openShell(dp,sec);return;}
@@ -2523,7 +2523,7 @@ async function submitUpload(){
   toast('✅ Content published to Learning Exchange.');
 }
 
-/* ═══ WALL OF FAME — shared via Supabase, photos go to Storage ═══ */
+/* ═══ HALL OF FAME — shared via Supabase, photos go to Storage ═══ */
 function renderFame(){
   const el=document.getElementById('fame-grid');if(!el)return;
   if(!FAME.length){
@@ -2584,7 +2584,7 @@ async function addFameChampion(){
   document.getElementById('fame-name').value='';document.getElementById('fame-caption').value='';
   document.getElementById('fame-photo-prev').innerHTML='';
   await loadFame();renderFame();renderAdminFame();
-  toast('✅ Champion added to Wall of Fame.');
+  toast('✅ Champion added to Hall of Fame.');
 }
 
 /* ═══ ANNOUNCEMENTS — public strip ═══ */
@@ -3726,7 +3726,7 @@ function renderAdminFame(){
 }
 async function removeFame(id){
   const champ=FAME.find(m=>m.id===id);
-  if(!confirm('Remove '+(champ?champ.name:'this champion')+' from the Wall of Fame? This cannot be undone.'))return;
+  if(!confirm('Remove '+(champ?champ.name:'this champion')+' from the Hall of Fame? This cannot be undone.'))return;
   const {error}=await sb.from('wall_of_fame').delete().eq('id',id);
   if(error){toast('⚠ Could not remove.');console.error(error);return}
   await loadFame();renderAdminFame();renderFame();toast('Champion removed.');
