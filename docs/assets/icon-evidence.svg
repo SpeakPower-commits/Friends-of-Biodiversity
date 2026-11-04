@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Evidence">
+  <style>
+    .b{transform-origin:center bottom;animation:grow 2.8s ease-in-out infinite}
+    .b2{animation-delay:.25s}.b3{animation-delay:.5s}
+    @keyframes grow{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+  </style>
+  <circle cx="32" cy="32" r="31" fill="#2E4A34"/>
+  <rect x="17" y="30" width="8" height="18" rx="2" fill="#97BC62" class="b"/>
+  <rect x="28" y="22" width="8" height="26" rx="2" fill="#EFCF9E" class="b b2"/>
+  <rect x="39" y="26" width="8" height="22" rx="2" fill="#97BC62" class="b b3"/>
+  <path d="M15 50h34" stroke="#EFCF9E" stroke-width="2.2" stroke-linecap="round"/>
+</svg>
