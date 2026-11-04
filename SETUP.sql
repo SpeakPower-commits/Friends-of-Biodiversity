@@ -62,7 +62,7 @@ create table comments (
   created_at timestamp without time zone default now()
 );
 
--- ── HALL OF FAME ──
+-- ── WALL OF FAME ──
 create table wall_of_fame (
   id uuid primary key default gen_random_uuid(),
   name text not null,

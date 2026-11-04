@@ -80,7 +80,7 @@ Individually, a single membership plants seeds. **Together, through the App, tho
 The Green Card is built to include, not exclude:
 
 - **Students** don't join with money — they join by **bringing their projects and ideas**, contributing the energy and innovation of Uganda's next generation.
-- **Silver, Gold, Platinum and Diamond** tiers welcome individuals and institutions at every level of commitment, each with its own benefits — from welcome kits and certificates to Learning Exchange access, a listing on UBF's **Hall of Fame**, and, for institutions, visibility and partnership opportunities in conservation.
+- **Silver, Gold, Platinum and Diamond** tiers welcome individuals and institutions at every level of commitment, each with its own benefits — from welcome kits and certificates to Learning Exchange access, a listing on UBF's **Wall of Fame**, and, for institutions, visibility and partnership opportunities in conservation.
 
 Whatever your means, there is a way for you to belong.
 
